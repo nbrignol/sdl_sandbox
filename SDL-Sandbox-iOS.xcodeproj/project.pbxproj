@@ -18,6 +18,10 @@
 		7837CFE9252B3BB300A0BBCA /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7837CFE8252B3BB300A0BBCA /* CoreBluetooth.framework */; };
 		78B50A8F252DC56E00077703 /* hero.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B50A8B252DC56E00077703 /* hero.png */; };
 		78B50A90252DC56E00077703 /* hero.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 78B50A8C252DC56E00077703 /* hero.bmp */; };
+		78BD097D252E02A400A2D15A /* libSDL2_mixer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BD096D252E022A00A2D15A /* libSDL2_mixer.a */; };
+		78BD097E252E02A400A2D15A /* libSDL2_net.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BD097B252E027D00A2D15A /* libSDL2_net.a */; };
+		78BD097F252E02A400A2D15A /* libSDL2_ttf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BD0961252E020600A2D15A /* libSDL2_ttf.a */; };
+		78BD0984252E049F00A2D15A /* OCRA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78BD0982252E046D00A2D15A /* OCRA.ttf */; };
 		78EBEFE2252DF0FC0071C1A0 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3444D252DE54A001C35BB /* libSDL2.a */; };
 		78EBEFE3252DF0FC0071C1A0 /* libSDL2_image.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F34439252DE52B001C35BB /* libSDL2_image.a */; };
 		78F343F3252DDC8B001C35BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F343F2252DDC8B001C35BB /* Images.xcassets */; };
@@ -35,6 +39,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		78BD0960252E020600A2D15A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78BD0959252E020600A2D15A /* SDL_ttf.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE48FD6E07AFA17000BB41DA;
+			remoteInfo = "libSDL_ttf-iOS";
+		};
+		78BD0962252E020600A2D15A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78BD0959252E020600A2D15A /* SDL_ttf.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA53152E1FE1016F0025C9BE;
+			remoteInfo = "libSDL_ttf-tvOS";
+		};
+		78BD096C252E022A00A2D15A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78BD0965252E022A00A2D15A /* SDL_mixer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE1FA95407AF96B2004B6283;
+			remoteInfo = "libSDL_mixer-iOS";
+		};
+		78BD096E252E022A00A2D15A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78BD0965252E022A00A2D15A /* SDL_mixer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AA5314F11FE0FE2E0025C9BE;
+			remoteInfo = "libSDL_mixer-tvOS";
+		};
+		78BD097A252E027D00A2D15A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78BD0976252E027D00A2D15A /* SDL_net.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE48FF6F07AFA9A900BB41DA;
+			remoteInfo = "Static Library";
+		};
 		78F34438252DE52B001C35BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 780DBDAA252B596000BF1576 /* SDL_image.xcodeproj */;
@@ -198,6 +237,13 @@
 		78B50A89252DC56D00077703 /* test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
 		78B50A8B252DC56E00077703 /* hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero.png; sourceTree = "<group>"; };
 		78B50A8C252DC56E00077703 /* hero.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = hero.bmp; sourceTree = "<group>"; };
+		78BD0959252E020600A2D15A /* SDL_ttf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_ttf.xcodeproj; path = "../SDL2_ttf/Xcode-iOS/SDL_ttf.xcodeproj"; sourceTree = "<group>"; };
+		78BD0964252E021600A2D15A /* SDL_ttf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_ttf.h; path = ../SDL2_ttf/SDL_ttf.h; sourceTree = "<group>"; };
+		78BD0965252E022A00A2D15A /* SDL_mixer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_mixer.xcodeproj; path = "../SDL2_mixer/Xcode-iOS/SDL_mixer.xcodeproj"; sourceTree = "<group>"; };
+		78BD0970252E026000A2D15A /* SDL_mixer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_mixer.h; path = ../SDL2_mixer/SDL_mixer.h; sourceTree = "<group>"; };
+		78BD0976252E027D00A2D15A /* SDL_net.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_net.xcodeproj; path = "../SDL2_net/Xcode-iOS/SDL_net.xcodeproj"; sourceTree = "<group>"; };
+		78BD097C252E029100A2D15A /* SDL_net.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_net.h; path = ../SDL2_net/SDL_net.h; sourceTree = "<group>"; };
+		78BD0982252E046D00A2D15A /* OCRA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRA.ttf; sourceTree = "<group>"; };
 		78CD5AC0252DC75300B35C4F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78F343F2252DDC8B001C35BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		78F34403252DDF90001C35BB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -215,6 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				78EBEFE2252DF0FC0071C1A0 /* libSDL2.a in Frameworks */,
+				78BD097D252E02A400A2D15A /* libSDL2_mixer.a in Frameworks */,
+				78BD097E252E02A400A2D15A /* libSDL2_net.a in Frameworks */,
+				78BD097F252E02A400A2D15A /* libSDL2_ttf.a in Frameworks */,
 				78EBEFE3252DF0FC0071C1A0 /* libSDL2_image.a in Frameworks */,
 				780DBECF252B5AC000BF1576 /* ImageIO.framework in Frameworks */,
 				7837CFE9252B3BB300A0BBCA /* CoreBluetooth.framework in Frameworks */,
@@ -262,6 +311,12 @@
 		29B97315FDCFA39411CA2CEA /* SDL-sources */ = {
 			isa = PBXGroup;
 			children = (
+				78BD097C252E029100A2D15A /* SDL_net.h */,
+				78BD0976252E027D00A2D15A /* SDL_net.xcodeproj */,
+				78BD0970252E026000A2D15A /* SDL_mixer.h */,
+				78BD0965252E022A00A2D15A /* SDL_mixer.xcodeproj */,
+				78BD0964252E021600A2D15A /* SDL_ttf.h */,
+				78BD0959252E020600A2D15A /* SDL_ttf.xcodeproj */,
 				780DBEC6252B5A2600BF1576 /* SDL_image.h */,
 				780DBDAA252B596000BF1576 /* SDL_image.xcodeproj */,
 				7837CF62252B2D3000A0BBCA /* include */,
@@ -409,10 +464,37 @@
 		78B50A8A252DC56E00077703 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				78BD0982252E046D00A2D15A /* OCRA.ttf */,
 				78B50A8B252DC56E00077703 /* hero.png */,
 				78B50A8C252DC56E00077703 /* hero.bmp */,
 			);
 			path = resources;
+			sourceTree = "<group>";
+		};
+		78BD095A252E020600A2D15A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78BD0961252E020600A2D15A /* libSDL2_ttf.a */,
+				78BD0963252E020600A2D15A /* libSDL2_ttf.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78BD0966252E022A00A2D15A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78BD096D252E022A00A2D15A /* libSDL2_mixer.a */,
+				78BD096F252E022A00A2D15A /* libSDL2_mixer.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78BD0977252E027D00A2D15A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78BD097B252E027D00A2D15A /* libSDL2_net.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		78F34432252DE52B001C35BB /* Products */ = {
@@ -478,6 +560,7 @@
 				Base,
 				en,
 				fr,
+				English,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
@@ -490,6 +573,18 @@
 					ProductGroup = 78F34432252DE52B001C35BB /* Products */;
 					ProjectRef = 780DBDAA252B596000BF1576 /* SDL_image.xcodeproj */;
 				},
+				{
+					ProductGroup = 78BD0966252E022A00A2D15A /* Products */;
+					ProjectRef = 78BD0965252E022A00A2D15A /* SDL_mixer.xcodeproj */;
+				},
+				{
+					ProductGroup = 78BD0977252E027D00A2D15A /* Products */;
+					ProjectRef = 78BD0976252E027D00A2D15A /* SDL_net.xcodeproj */;
+				},
+				{
+					ProductGroup = 78BD095A252E020600A2D15A /* Products */;
+					ProjectRef = 78BD0959252E020600A2D15A /* SDL_ttf.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -499,6 +594,41 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		78BD0961252E020600A2D15A /* libSDL2_ttf.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2_ttf.a;
+			remoteRef = 78BD0960252E020600A2D15A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		78BD0963252E020600A2D15A /* libSDL2_ttf.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2_ttf.a;
+			remoteRef = 78BD0962252E020600A2D15A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		78BD096D252E022A00A2D15A /* libSDL2_mixer.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2_mixer.a;
+			remoteRef = 78BD096C252E022A00A2D15A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		78BD096F252E022A00A2D15A /* libSDL2_mixer.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2_mixer.a;
+			remoteRef = 78BD096E252E022A00A2D15A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		78BD097B252E027D00A2D15A /* libSDL2_net.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2_net.a;
+			remoteRef = 78BD097A252E027D00A2D15A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		78F34439252DE52B001C35BB /* libSDL2_image.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -562,6 +692,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78BD0984252E049F00A2D15A /* OCRA.ttf in Resources */,
 				78F34404252DDF90001C35BB /* Launch Screen.storyboard in Resources */,
 				78B50A90252DC56E00077703 /* hero.bmp in Resources */,
 				78B50A8F252DC56E00077703 /* hero.png in Resources */,

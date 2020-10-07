@@ -7,6 +7,9 @@
 #include "SDL_image.h"
 #include "test.h"
 
+//#include "SDL_net.h"
+//#include "SDL_mixer.h"
+#include "SDL_ttf.h"
 
 #define SCREEN_WIDTH 320
 #define SCREEN_HEIGHT 480
@@ -21,7 +24,11 @@ Uint8 r, g, b;
 
 SDL_Rect rect;
 SDL_Surface * image;
+SDL_Surface * message;
 SDL_Texture * texture;
+SDL_Texture * textureMessage;
+
+int msgH, msgW;
 
 double rotation;
 float scale;
@@ -58,7 +65,10 @@ render(SDL_Renderer *renderer, SDL_Rect screen, SDL_Rect rect)
     /*  Fill the rectangle in the color */
     SDL_RenderFillRect(renderer, &screen);
     SDL_RenderFillRect(renderer, &rect);
-    //SDL_RenderCopy(renderer, texture, &imgRect, &destRect);
+        
+    
+    
+    SDL_RenderCopy(renderer, textureMessage, &(message->clip_rect), &(message->clip_rect));
     
     
     SDL_RenderCopyEx(renderer, texture, &imgRect, &destRect, rotation, NULL, SDL_FLIP_NONE);
@@ -133,7 +143,30 @@ main(int argc, char *argv[])
     //image = SDL_LoadBMP("hero.bmp");
     texture = SDL_CreateTextureFromSurface(renderer, image);
     
+    
+    if (! TTF_Init()){
+        SDL_Log("TTF INIT FAIL");
+    }
 
+    TTF_Font * font = NULL;
+    #ifdef MODE_CLI
+    font = TTF_OpenFont( "resources/OCRA.ttf", 70 );
+    #else
+    font = TTF_OpenFont( "OCRA.ttf", 70 );
+    #endif
+    
+    if (font == NULL){
+        SDL_Log("TTF open FAIL");
+    }
+    
+    SDL_Color textColor = { 255, 255, 255 };
+    message = TTF_RenderText_Solid( font, "Well, hello SDL", textColor );
+    
+    
+    //TTF_SizeText(TTF_Font *font, const char *text, int *w, int *h)
+    textureMessage = SDL_CreateTextureFromSurface(renderer, message);
+    
+    
     /* Enter render loop, waiting for user to quit */
     done = 0;
     while (!done) {
