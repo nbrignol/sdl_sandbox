@@ -42,23 +42,22 @@
 
 # Goals
 
-Multiple targets for the SDL, SDL_Image project : 
+Multiple targets for the SDL, SDL_Image, SDL TTF project : 
 
 - iOS
 - Unix (Tested on MacOS)
 
 Soon : 
 
-- Emscripten
+- Emscripten (WIP)
 - Android
 - MacOS bundle
 - Windows
 
 - SDL Mixer
-- SDL TTF
 - SDL Net
 
 Todo :
 
 - Clean resources 
-- Better sample app
+- Better sample app !

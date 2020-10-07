@@ -35,6 +35,7 @@ float scale;
 
 SDL_bool quality;
 
+
 void
 render(SDL_Renderer *renderer, SDL_Rect screen, SDL_Rect rect)
 {
@@ -60,7 +61,7 @@ render(SDL_Renderer *renderer, SDL_Rect screen, SDL_Rect rect)
     SDL_SetRenderDrawColor(renderer, r, g, b, 255);
     
     SDL_Rect imgRect = {0,0, 100, 156};
-    SDL_Rect destRect = {rect.x, rect.y, 100 * scale, 156 * scale};
+    SDL_Rect destRect = {rect.x, rect.y, static_cast<int>(100 * scale), static_cast<int>(156 * scale)};
     
     /*  Fill the rectangle in the color */
     SDL_RenderFillRect(renderer, &screen);
