@@ -88,12 +88,14 @@ main(int argc, char *argv[])
         return 1;
     }
 
+
+
     /* create fullscreen window and renderer */
-    window =
-        SDL_CreateWindow(NULL, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 0, 0,
-                         SDL_WINDOW_OPENGL | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_FULLSCREEN | SDL_WINDOW_BORDERLESS);
-    
-    
+    #ifdef MODE_CLI
+    window = SDL_CreateWindow(NULL, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 500, 800, SDL_WINDOW_OPENGL | SDL_WINDOW_ALLOW_HIGHDPI);
+    #else 
+    window = SDL_CreateWindow(NULL, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 0, 0, SDL_WINDOW_OPENGL | SDL_WINDOW_ALLOW_HIGHDPI | SDL_WINDOW_FULLSCREEN | SDL_WINDOW_BORDERLESS);
+    #endif
     
     if (!window) {
         printf("Could not initialize Window\n");
@@ -114,7 +116,7 @@ main(int argc, char *argv[])
     SDL_Log(HELLO);
     
     SDL_Rect gScreenRect = { 0, 0, rendererW, rendererH };
-   
+    SDL_Log("SIZE : %d / %d", rendererW, rendererH);
    
     rect.x = 0;
     rect.y = 0;
@@ -123,8 +125,11 @@ main(int argc, char *argv[])
     
     //SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
     
-    
+    #ifdef MODE_CLI
+    image = IMG_Load("resources/hero.png");
+    #else 
     image = IMG_Load("hero.png");
+    #endif
     //image = SDL_LoadBMP("hero.bmp");
     texture = SDL_CreateTextureFromSurface(renderer, image);
     
@@ -142,6 +147,11 @@ main(int argc, char *argv[])
             
             if (event.type == SDL_MOUSEBUTTONDOWN) {
                 //SDL_Log("SDL_MOUSEBUTTONDOWN");
+
+                rect.x = event.button.x;
+                rect.y = event.button.y;
+                
+                scale = 2;
             }
             
             if (event.type == SDL_MOUSEBUTTONUP) {
@@ -190,6 +200,8 @@ main(int argc, char *argv[])
             
             if (event.type == SDL_MOUSEMOTION) {
                 //SDL_Log("SDL_MOUSEMOTION");
+                rect.x = event.motion.x;
+                rect.y = event.motion.y;
             }
             
             if (event.type == SDL_QUIT) {
