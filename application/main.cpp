@@ -60,8 +60,8 @@ render(SDL_Renderer *renderer, SDL_Rect screen, SDL_Rect rect)
     
     SDL_SetRenderDrawColor(renderer, r, g, b, 255);
     
-    SDL_Rect imgRect = {0,0, 100, 156};
-    SDL_Rect destRect = {rect.x, rect.y, static_cast<int>(100 * scale), static_cast<int>(156 * scale)};
+    SDL_Rect imgRect = {0,0, 640, 730};
+    SDL_Rect destRect = {rect.x, rect.y, static_cast<int>(640 * scale), static_cast<int>(730 * scale)};
     
     /*  Fill the rectangle in the color */
     SDL_RenderFillRect(renderer, &screen);
@@ -86,7 +86,7 @@ main(int argc, char *argv[])
     g = 50;
     b = 50;
     rotation = 0;
-    scale = 4;
+    scale = 0.1;
     
     SDL_Window *window;
     SDL_Renderer *renderer;
@@ -161,7 +161,8 @@ main(int argc, char *argv[])
     }
     
     SDL_Color textColor = { 255, 255, 255 };
-    message = TTF_RenderText_Solid( font, "Well, hello SDL", textColor );
+    //message = TTF_RenderText_Solid( font, "Well, hello SDL", textColor );
+    message = TTF_RenderText_Blended( font, "Well, hello SDL", textColor );
     
     
     //TTF_SizeText(TTF_Font *font, const char *text, int *w, int *h)
@@ -198,7 +199,8 @@ main(int argc, char *argv[])
                 rect.x = event.tfinger.x * gScreenRect.w;
                 rect.y = event.tfinger.y * gScreenRect.h;
                 
-                scale = 2;
+                scale = 0.1;
+                rotation = 0;
                 
                
                 
