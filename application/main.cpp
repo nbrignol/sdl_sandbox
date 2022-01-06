@@ -14,6 +14,8 @@
 #define SCREEN_WIDTH 320
 #define SCREEN_HEIGHT 480
 
+#define HERO_SIZE 1024
+
 int
 randomInt(int min, int max)
 {
@@ -49,13 +51,17 @@ render(SDL_Renderer *renderer, SDL_Rect screen, SDL_Rect rect)
     
     b++;
     rotation+= -0.1;
-    scale += 0.001f;
+    scale += 0.01f;
+    
+    if (scale>1) {
+        scale=1;
+    }
     
     SDL_SetRenderDrawColor(renderer, r, g, b, 255);
     
-    SDL_Rect imgRect = {0,0, 4961, 4961};
-    int imageW =static_cast<int>(4961 * scale);
-    int imageH =static_cast<int>(4961 * scale);
+    SDL_Rect imgRect = {0,0, HERO_SIZE, HERO_SIZE};
+    int imageW =static_cast<int>(HERO_SIZE * scale);
+    int imageH =static_cast<int>(HERO_SIZE * scale);
     SDL_Rect destRect = {rect.x - (imageW/2), rect.y - (imageH/2), imageW, imageH};
     
     /*  Fill the rectangle in the color */
@@ -63,11 +69,14 @@ render(SDL_Renderer *renderer, SDL_Rect screen, SDL_Rect rect)
     SDL_RenderFillRect(renderer, &rect);
         
     
+    SDL_Rect messageRect = {rect.x - (message->clip_rect.w / 2) ,rect.y + HERO_SIZE/4, message->clip_rect.w, message->clip_rect.h};
+    SDL_RenderCopy(renderer, textureMessage, &(message->clip_rect), &messageRect);
     
-    SDL_RenderCopy(renderer, textureMessage, &(message->clip_rect), &(message->clip_rect));
     
-    
-    SDL_RenderCopyEx(renderer, texture, &imgRect, &destRect, rotation, NULL, SDL_FLIP_NONE);
+    int res = SDL_RenderCopyEx(renderer, texture, &imgRect, &destRect, rotation, NULL, SDL_FLIP_NONE);
+    if (res < 0) {
+        SDL_Log("SDL_RenderCopyEx: %s\n", SDL_GetError());
+    }
 
     /* update screen */
     SDL_RenderPresent(renderer);
@@ -117,13 +126,32 @@ main(int argc, char *argv[])
     int rendererW;
     int rendererH;
     
-    SDL_GetRendererOutputSize(renderer, &rendererW, &rendererH);
-    
     SDL_Log(HELLO);
     
+    SDL_GetRendererOutputSize(renderer, &rendererW, &rendererH);
     SDL_Rect gScreenRect = { 0, 0, rendererW, rendererH };
-    SDL_Log("SIZE : %d / %d", rendererW, rendererH);
+
+    
+    
+    SDL_RendererInfo info;
+    SDL_GetRendererInfo(renderer, &info);
+    
+    SDL_Log("INFOS (%s) : Max texture size: %dx%d", info.name,  info.max_texture_width, info.max_texture_height);
    
+
+    int winW = 0;
+    int winH = 0;
+    SDL_GetWindowSize(window, &winW, &winH);
+    SDL_Log("WIN SIZE : %d / %d", winW, winH);
+    SDL_Log("RENDER SIZE : %d / %d", rendererW, rendererH);
+
+    float multW = (float) rendererW / (float) winW;
+    float multH = (float) rendererH / (float) winH;
+
+    SDL_Log("multiplier : %f / %f", multW, multH);
+   
+    
+    
     rect.x = 0;
     rect.y = 0;
     rect.w = gScreenRect.w;
@@ -132,15 +160,23 @@ main(int argc, char *argv[])
     //SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
     
     #ifdef MODE_CLI
-    image = IMG_Load("resources/boson.png");
+    image = IMG_Load("resources/hero.png");
     #else 
-    image = IMG_Load("boson.png");
+    image = IMG_Load("hero.png");
     #endif
+    
+    if(!image) {
+        SDL_Log("IMG_Load: %s\n", IMG_GetError());
+    }
+    
     //image = SDL_LoadBMP("hero.bmp");
     texture = SDL_CreateTextureFromSurface(renderer, image);
     
+    if(texture == NULL) {
+        SDL_Log("SDL_CreateTextureFromSurface: %s\n", SDL_GetError());
+    }
     
-    if (TTF_Init() == -1){
+    if (TTF_Init() < 0){
         SDL_Log("TTF INIT FAIL");
     }
 
@@ -158,6 +194,7 @@ main(int argc, char *argv[])
     SDL_Color textColor = { 255, 255, 255 };
     //message = TTF_RenderText_Solid( font, "Well, hello SDL", textColor );
     message = TTF_RenderText_Blended( font, "Well, hello SDL", textColor );
+    
     
     
     //TTF_SizeText(TTF_Font *font, const char *text, int *w, int *h)

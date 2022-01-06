@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,19 +17,17 @@
 		7837CFD4252B3A8800A0BBCA /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7837CFD3252B3A8800A0BBCA /* Metal.framework */; };
 		7837CFE9252B3BB300A0BBCA /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7837CFE8252B3BB300A0BBCA /* CoreBluetooth.framework */; };
 		78B50A8F252DC56E00077703 /* hero.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B50A8B252DC56E00077703 /* hero.png */; };
-		78B50A90252DC56E00077703 /* hero.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 78B50A8C252DC56E00077703 /* hero.bmp */; };
 		78BD097D252E02A400A2D15A /* libSDL2_mixer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BD096D252E022A00A2D15A /* libSDL2_mixer.a */; };
 		78BD097E252E02A400A2D15A /* libSDL2_net.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BD097B252E027D00A2D15A /* libSDL2_net.a */; };
 		78BD097F252E02A400A2D15A /* libSDL2_ttf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78BD0961252E020600A2D15A /* libSDL2_ttf.a */; };
 		78BD0984252E049F00A2D15A /* OCRA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78BD0982252E046D00A2D15A /* OCRA.ttf */; };
 		78EBEFE2252DF0FC0071C1A0 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3444D252DE54A001C35BB /* libSDL2.a */; };
 		78EBEFE3252DF0FC0071C1A0 /* libSDL2_image.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F34439252DE52B001C35BB /* libSDL2_image.a */; };
-		78F12D492786F65C0035EBD1 /* boson.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F12D482786F65C0035EBD1 /* boson.png */; };
 		78F343F3252DDC8B001C35BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F343F2252DDC8B001C35BB /* Images.xcassets */; };
 		78F34404252DDF90001C35BB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F34403252DDF90001C35BB /* Launch Screen.storyboard */; };
 		78F3441E252DE18C001C35BB /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3441D252DE18C001C35BB /* CoreServices.framework */; };
 		78F34420252DE1A6001C35BB /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7837CFD3252B3A8800A0BBCA /* Metal.framework */; };
-		78F34422252DE231001C35BB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
+		78F34422252DE231001C35BB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; platformFilter = ios; };
 		78F34515252DED72001C35BB /* test.h in Sources */ = {isa = PBXBuildFile; fileRef = 78B50A89252DC56D00077703 /* test.h */; };
 		78F34518252DEDC0001C35BB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 78B50A88252DC56D00077703 /* main.cpp */; };
 		FA8B4B97196703B400F8EB7C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8B4B96196703B400F8EB7C /* CoreMotion.framework */; };
@@ -135,7 +133,7 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* ___PROJECTNAME___.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "___PROJECTNAME___.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* SDLSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDLSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -237,7 +235,6 @@
 		78B50A88252DC56D00077703 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		78B50A89252DC56D00077703 /* test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
 		78B50A8B252DC56E00077703 /* hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero.png; sourceTree = "<group>"; };
-		78B50A8C252DC56E00077703 /* hero.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = hero.bmp; sourceTree = "<group>"; };
 		78BD0959252E020600A2D15A /* SDL_ttf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_ttf.xcodeproj; path = "../SDL2_ttf/Xcode-iOS/SDL_ttf.xcodeproj"; sourceTree = "<group>"; };
 		78BD0964252E021600A2D15A /* SDL_ttf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_ttf.h; path = ../SDL2_ttf/SDL_ttf.h; sourceTree = "<group>"; };
 		78BD0965252E022A00A2D15A /* SDL_mixer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_mixer.xcodeproj; path = "../SDL2_mixer/Xcode-iOS/SDL_mixer.xcodeproj"; sourceTree = "<group>"; };
@@ -246,7 +243,6 @@
 		78BD097C252E029100A2D15A /* SDL_net.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_net.h; path = ../SDL2_net/SDL_net.h; sourceTree = "<group>"; };
 		78BD0982252E046D00A2D15A /* OCRA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRA.ttf; sourceTree = "<group>"; };
 		78CD5AC0252DC75300B35C4F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78F12D482786F65C0035EBD1 /* boson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boson.png; sourceTree = "<group>"; };
 		78F343F2252DDC8B001C35BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		78F34403252DDF90001C35BB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		78F3441D252DE18C001C35BB /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -291,7 +287,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* ___PROJECTNAME___.app */,
+				1D6058910D05DD3D006BFB54 /* SDLSandbox.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -467,9 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				78BD0982252E046D00A2D15A /* OCRA.ttf */,
-				78F12D482786F65C0035EBD1 /* boson.png */,
 				78B50A8B252DC56E00077703 /* hero.png */,
-				78B50A8C252DC56E00077703 /* hero.bmp */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -539,7 +533,7 @@
 			);
 			name = "SDL-Sandbox-iOS";
 			productName = "___PROJECTNAME___";
-			productReference = 1D6058910D05DD3D006BFB54 /* ___PROJECTNAME___.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* SDLSandbox.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -549,11 +543,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1200;
-				TargetAttributes = {
-					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = P5XDZQN8QB;
-					};
-				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SDL-Sandbox-iOS" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -697,10 +686,8 @@
 			files = (
 				78BD0984252E049F00A2D15A /* OCRA.ttf in Resources */,
 				78F34404252DDF90001C35BB /* Launch Screen.storyboard in Resources */,
-				78B50A90252DC56E00077703 /* hero.bmp in Resources */,
 				78B50A8F252DC56E00077703 /* hero.png in Resources */,
 				78F343F3252DDC8B001C35BB /* Images.xcassets in Resources */,
-				78F12D492786F65C0035EBD1 /* boson.png in Resources */,
 				7837CFBA252B2D3000A0BBCA /* SDL_config.h.cmake in Resources */,
 				7837CFBB252B2D3000A0BBCA /* SDL_config.h.in in Resources */,
 			);
@@ -727,6 +714,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = P5XDZQN8QB;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -737,7 +727,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.neeko.sdlsandbox;
-				PRODUCT_NAME = "___PROJECTNAME___";
+				PRODUCT_NAME = SDLSandbox;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = ../../../include;
 			};
@@ -749,6 +742,9 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = P5XDZQN8QB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -757,7 +753,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.neeko.sdlsandbox;
-				PRODUCT_NAME = "___PROJECTNAME___";
+				PRODUCT_NAME = SDLSandbox;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = ../../../include;
 			};
