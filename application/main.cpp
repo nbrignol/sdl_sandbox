@@ -46,22 +46,17 @@ render(SDL_Renderer *renderer, SDL_Rect screen, SDL_Rect rect)
     SDL_RenderClear(renderer);
 
     
-    //rect.w = screen.w / 10;
-    //rect.h = screen.h / 10;
-    //rect.w = randomInt(64, screen.w );
-    //rect.h = randomInt(64, screen.h );
-    //rect.x = randomInt(0, screen.w);
-    //rect.y = randomInt(0, screen.h);
-
     
-    r++;
-    rotation+=0.1;
+    b++;
+    rotation+= -0.1;
     scale += 0.001f;
     
     SDL_SetRenderDrawColor(renderer, r, g, b, 255);
     
-    SDL_Rect imgRect = {0,0, 640, 730};
-    SDL_Rect destRect = {rect.x, rect.y, static_cast<int>(640 * scale), static_cast<int>(730 * scale)};
+    SDL_Rect imgRect = {0,0, 4961, 4961};
+    int imageW =static_cast<int>(4961 * scale);
+    int imageH =static_cast<int>(4961 * scale);
+    SDL_Rect destRect = {rect.x - (imageW/2), rect.y - (imageH/2), imageW, imageH};
     
     /*  Fill the rectangle in the color */
     SDL_RenderFillRect(renderer, &screen);
@@ -131,21 +126,21 @@ main(int argc, char *argv[])
    
     rect.x = 0;
     rect.y = 0;
-    rect.w = gScreenRect.w / 10;
-    rect.h = gScreenRect.h / 10;
+    rect.w = gScreenRect.w;
+    rect.h = gScreenRect.h;
     
     //SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1");
     
     #ifdef MODE_CLI
-    image = IMG_Load("resources/hero.png");
+    image = IMG_Load("resources/boson.png");
     #else 
-    image = IMG_Load("hero.png");
+    image = IMG_Load("boson.png");
     #endif
     //image = SDL_LoadBMP("hero.bmp");
     texture = SDL_CreateTextureFromSurface(renderer, image);
     
     
-    if (! TTF_Init()){
+    if (TTF_Init() == -1){
         SDL_Log("TTF INIT FAIL");
     }
 

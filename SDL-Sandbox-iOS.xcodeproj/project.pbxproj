@@ -24,6 +24,7 @@
 		78BD0984252E049F00A2D15A /* OCRA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 78BD0982252E046D00A2D15A /* OCRA.ttf */; };
 		78EBEFE2252DF0FC0071C1A0 /* libSDL2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3444D252DE54A001C35BB /* libSDL2.a */; };
 		78EBEFE3252DF0FC0071C1A0 /* libSDL2_image.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F34439252DE52B001C35BB /* libSDL2_image.a */; };
+		78F12D492786F65C0035EBD1 /* boson.png in Resources */ = {isa = PBXBuildFile; fileRef = 78F12D482786F65C0035EBD1 /* boson.png */; };
 		78F343F3252DDC8B001C35BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F343F2252DDC8B001C35BB /* Images.xcassets */; };
 		78F34404252DDF90001C35BB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F34403252DDF90001C35BB /* Launch Screen.storyboard */; };
 		78F3441E252DE18C001C35BB /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F3441D252DE18C001C35BB /* CoreServices.framework */; };
@@ -245,6 +246,7 @@
 		78BD097C252E029100A2D15A /* SDL_net.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SDL_net.h; path = ../SDL2_net/SDL_net.h; sourceTree = "<group>"; };
 		78BD0982252E046D00A2D15A /* OCRA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRA.ttf; sourceTree = "<group>"; };
 		78CD5AC0252DC75300B35C4F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78F12D482786F65C0035EBD1 /* boson.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boson.png; sourceTree = "<group>"; };
 		78F343F2252DDC8B001C35BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		78F34403252DDF90001C35BB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		78F3441D252DE18C001C35BB /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
@@ -465,6 +467,7 @@
 			isa = PBXGroup;
 			children = (
 				78BD0982252E046D00A2D15A /* OCRA.ttf */,
+				78F12D482786F65C0035EBD1 /* boson.png */,
 				78B50A8B252DC56E00077703 /* hero.png */,
 				78B50A8C252DC56E00077703 /* hero.bmp */,
 			);
@@ -697,6 +700,7 @@
 				78B50A90252DC56E00077703 /* hero.bmp in Resources */,
 				78B50A8F252DC56E00077703 /* hero.png in Resources */,
 				78F343F3252DDC8B001C35BB /* Images.xcassets in Resources */,
+				78F12D492786F65C0035EBD1 /* boson.png in Resources */,
 				7837CFBA252B2D3000A0BBCA /* SDL_config.h.cmake in Resources */,
 				7837CFBB252B2D3000A0BBCA /* SDL_config.h.in in Resources */,
 			);
